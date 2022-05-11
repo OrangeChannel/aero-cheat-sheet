@@ -1,0 +1,42 @@
+\section{Thin airfoil theory}
+We approximate as a thin airfoil by considering only the camberline.\\
+$V_{\infty,n}=V_\infty\left(\alpha-\odv{y}{x}\right)$\\
+$\Gamma=\int_0^c\gamma(x)\odif{x}$\hfill\text{($\gamma$ is $\Gamma$ per length)}\\
+Net normal velocity (camberline is streamline):\\
+$V_{\infty,n}+V_\text{vortex}=0$
+\subsection*{Fund. theorem of thin-airfoil theory}
+$\frac{1}{2\pi}\int_0^c\frac{\gamma(\xi)\odif{\xi}}{x-\xi}=V_\infty\left(\alpha-\odv{y}{x}\right)$\\
+$\xi\defequals\frac{c}{2}\left(1-\cos\beta\right)$\\
+$x=\xi=0\to\beta=0,\hfill x=\xi=c\to\beta=\pi$.\\
+$\gamma(\beta)=2V_\infty\left(A_0\frac{1+\cos\beta}{\sin\beta}+\sum_{n=1}^\infty A_n\sin(n\beta)\right)$\\
+$A_0=\alpha-\frac{1}{\pi}\int_0^\pi\odv{y}{x}\odif{\beta}$\\
+$A_n=\frac{2}{\pi}\int_0^\pi\odv{y}{x}\cos(n\beta)\odif{\beta}$\\
+$\Gamma=\int_0^c\gamma\odif{x}=cV_\infty\left(\pi A_0+\frac{\pi}{2}A_1\right)$\\
+$L'=\rho V_\infty^2c\left(\pi A_0+\frac{\pi}{2}A_1\right)$\\
+$c_l=\pi(2A_0+A_1)=2\pi\left[\alpha+\frac{1}{\pi}\int_0^\pi\odv{y}{x}\left(\cos\beta-1\right)\odif{\beta}\right]$\\
+$\alpha_{L=0}=-\frac{1}{\pi}\int_0^\pi\odv{y}{x}\left(\cos\beta-1\right)\odif{\beta}$\\
+Only $A_0$ depends on angle of attack. All $A_n$ have $\odv{y}/{x}$ so they all depend on the geometry of the airfoil.
+\subsection*{Aerodynamic moment}
+% Looking for the moment about the LE. Pitch down (nose down) implies a CCW moment, which gives a negative sign.\\
+$\odif{M_\text{le}}=-x\odif{L}$\\
+$M_\text{le}=-\frac{\rho V_\infty^2c^2\pi}{4}\left(A_0+A_1-\frac{A_2}{2}\right)$\\
+$c_{m,\text{le}}=\frac{M_\text{le}}{\sfrac{1}{2}\rho V_\infty^2c^2}=-\frac{\pi}{2}\left(A_0+A_1-\frac{A_2}{2}\right)=-\left[\frac{c_l}{4}+\frac{\pi}{4}\left(A_1-A_2\right)\right]$\\
+$c_{m,c/4}=\frac{\pi}{4}\left(A_2-A_1\right)$
+\subsection*{Center of pressure}
+The center of pressure is the location at which $L'$ acts on an airfoil.\\
+$\frac{x_\text{cp}}{c}=\frac{A_0+A_1-\sfrac{A_2}{2}}{2(2A_0+A_1)}=\frac{1}{4}\left[1+\frac{\pi}{c_l}\left(A_1-A_2\right)\right]$\\
+For any thin, symmetric airfoil, $x_\text{cp}=c/4$. For a cambered airfoil, $x_\text{cp}\neq c/4$ (depends on $\alpha$).
+\subsection*{Aerodynamic center}
+The aerodynamic center is the location on airfoil where the moment generated remains constant over all angles of attack.\\
+$\odv*[fun=true]{c_{m,\text{ac}}}{\alpha}=0$\\
+% $c_{m,c/4}=\frac{\pi}{4}(A_2-A_1)$\hfill\text{(for thin airfoils)}\\
+For thin, symmetric airfoils, the center of pressure and aerodynamic center are both located at the quarter-chord point.
+For thin, cambered airfoils, the aerodynamic center \textit{is} at the quarter-chord point, but the center of pressure \textit{is not}.\\
+$c_{m,c/4}=c_{m,\text{le}}+\frac{c_l}{4}=\frac{\pi}{4}\left(A_2-A_1\right)$
+\subsection*{Moment about aerodynamic center}
+For a thick, cambered airfoil:\\
+$a_o=\odv*[fun=true]{c_l}{\alpha}$\\
+$m_o=\odv*[fun=true]{c_{m,c/4}}{\alpha}$\\
+$c_{m,\text{ac}}=\left(\frac{x_\text{ac}}{c}-0.25\right)c_l+c_{m,c/4}$\\
+$0=\left(\frac{x_\text{ac}}{c}-0.25\right)a_o+m_o$\hfill\text{(from exp. data)}\\
+$x_\text{ac}=c\left(-\frac{m_o}{a_o}+0.25\right)$

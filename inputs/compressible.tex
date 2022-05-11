@@ -1,0 +1,45 @@
+\section{Compressible Aerodynamics}
+For air, $\gamma=1.4$ and $R=\qty{287}{\J\per\kg\per\K}$.\\
+$M\defequals\frac{u}{a}$\hfill(Mach number)\\
+$a=\sqrt{\gamma RT}=\sqrt{\frac{\gamma P}{\rho}}$\hfill(speed of sound)\\
+$\gamma=\frac{C_P}{C_V}$\\
+$M_\infty=\frac{V_\infty}{a_\infty}$\\
+When $M_\infty<0.3$ the flow is incompressible. If $M<1$ everywhere, we have subsonic flow. Transonic flow is when a portion of the flow over the top of the airfoil reaches the speed of sound.
+\subsection*{Subsonic flow}
+For an inviscid flow, the velocity potential satisfies Laplace's equation. If the flow is compressible, a correction is needed:
+$\left(1-M_\infty^2\right)\pdv[order=2]{\phi}{x}+\pdv[order=2]{\phi}{y}=0$\\
+$C_{P,\text{comp}}=\frac{C_P}{\sqrt{1-M_\infty^2}}$\\
+$C_{L,\text{comp}}=\frac{C_L}{\sqrt{1-M_\infty^2}}$\\
+$a_{o,\text{comp}}=\frac{a_o}{\sqrt{1-M_\infty^2}}$\\
+The critical Mach number, $M_\text{cr}$ is the $M_\infty$ such that $M$ at any location around the airfoil is at most 1.\\
+$a_\text{comp}=\frac{a_{o,\text{comp}}}{1+\frac{a_{o,\text{comp}}}{\pi\AR}\left(1+\epsilon_1\right)}$\\
+\subsection*{Ideal gas properties}
+$P=\rho RT$\\
+$Pv=RT$\hfill($v$ is specific volume)\\
+$e=C_VT$\hfill(internal energy)\\
+$h=e+Pv=C_PT$\hfill(enthalpy)\\
+$C_V=\frac{R}{\gamma-1}\hfill C_P=\frac{\gamma R}{\gamma-1}$\\
+In an \textbf{adiabatic} processs, no heat is added or subtracted. In a \textbf{reversible} process, no friction/dissipation. A reversible, adiabatic process is called \textbf{isentropic}.\\
+$\frac{P_2}{P_1}=\left(\frac{\rho_2}{\rho_1}\right)^\gamma=\left(\frac{T_2}{T_1}\right)^{\sfrac{\gamma}{(\gamma-1)}}$\hfill(isentropic)\\
+$C_PT+\frac{u^2}{2}=\text{const.}$\hfill(adiabatic)\\
+$T_o=T+\frac{u^2}{2C_P}$\hfill(stagnation temp.)\\
+$\frac{T_o}{T}=1+\frac{\gamma-1}{2}M^2$\\
+If flow is isentropic, we can define stagnation pressure and density:\\
+$\frac{P_o}{P}=\left(\frac{T_o}{T}\right)^{\sfrac{\gamma}{(\gamma-1)}}=\left(1+\frac{\gamma-1}{2}M^2\right)^{\sfrac{\gamma}{(\gamma-1)}}$\\
+$\frac{\rho_o}{\rho}=\left(1+\frac{\gamma-1}{2}M^2\right)^{\sfrac{1}{(\gamma-1)}}$\\
+\subsection*{Airfoil theory}
+If $M_\infty=M_\text{cr}$, the location of minimum $C_P$ is location of $M_A=1$.\\
+$C_P=\frac{P-P_\infty}{\sfrac{1}{2}\rho_\infty V_\infty^2}=\frac{2}{\gamma M_\infty^2}\left(\frac{P}{P_\infty}-1\right)$\\
+$C_{P,A}=\frac{2}{\gamma M_\infty^2}\left(\frac{P_A}{P_\infty}-1\right)$\\
+$\frac{P_o}{P}=\left(1+\frac{\gamma-1}{2}M^2\right)^{\sfrac{\gamma}{(\gamma-1)}}$\\
+$\frac{P_{o,\infty}}{P_\infty}=\left(1+\frac{\gamma-1}{2}M_\infty^2\right)^{\sfrac{\gamma}{(\gamma-1)}}$\\
+% $\frac{P_{o,\infty}}{P_\infty}=\left(1+\frac{\gamma-1}{2}M_\text{cr}^2\right)^{\sfrac{\gamma}{(\gamma-1)}}$\hfill(if $M_\infty=M_\text{cr}$)\\
+$\frac{P_{o,A}}{P_A}=\left(1+\frac{\gamma-1}{2}\right)^{\sfrac{\gamma}{(\gamma-1)}}$\hfill(at A)\\
+Isentropic: $P_o=\text{const.}\to P_{o,\infty}=P_{o,A}$\\
+$\frac{P_A}{P_\infty}=\left(\frac{1+\frac{\gamma-1}{2}M_\text{cr}^2}{1+\frac{\gamma-1}{2}}\right)^{\sfrac{\gamma}{(\gamma-1)}}$\\
+$C_{P,A}=\frac{2}{\gamma M_\text{cr}^2}\left[\left(\frac{1+\frac{\gamma-1}{2}M_\text{cr}^2}{1+\frac{\gamma-1}{2}}\right)^{\sfrac{\gamma}{(\gamma-1)}}-1\right]$\\
+% $C_{P,\text{comp}}=\frac{C_{P,\text{incomp}}}{\sqrt{1-M_\infty^2}}$\\
+$C_{P,A}=\frac{C_{P,\text{incomp}}}{\sqrt{1-M_\text{cr}^2}}$\\
+$\frac{C_{P,\text{incomp}}}{\sqrt{1-M_\text{cr}^2}}=\frac{2}{\gamma M_\text{cr}^2}\left[\left(\frac{1+\frac{\gamma-1}{2}M_\text{cr}^2}{1+\frac{\gamma-1}{2}}\right)^{\sfrac{\gamma}{(\gamma-1)}}-1\right]$\\
+A thicker airfoil will have reduced $M_\text{cr}$. This limits the speed the plane can safely fly at. To combat this, the wings are \textit{swept} backwards to give a longer effective chord length $l'=\frac{l}{\cos\theta}$.\\
+$\frac{t}{l/\cos\theta}=\left(\frac{t}{l}\right)\cos\theta$\hfill(reduced)\\

@@ -1,0 +1,42 @@
+\section{Viscous Flow}
+\subsection*{Boundary layer equations}
+$\rho\left[u\pdv{u}{x}+v\pdv{u}{y}\right]=-\pdv{p}{x}+\mu\pdv[order=2]{u}{y}$\\
+$\pdv{p}{y}=0$
+\subsection*{Order-of-magnitude approximations}
+$\frac{\rho V_\infty^2}{x}\approx\frac{\mu V_\infty}{\delta^2}\implies\delta^2\approx\frac{\mu x}{\rho V_\infty}$\\
+$\text{Re}_x=\frac{\rho V_\infty x}{\mu}$\\
+$\frac{\delta}{x}\approx\frac{1}{\sqrt{\text{Re}_x}}$
+\subsection*{Similarity solution}
+Defining $\eta\defequals\frac{y}{\delta}$ and $\odv{F}{\eta}\defequals\frac{u}{V_\infty}$:\\
+$\odv[order=3]{F}{\eta}+\frac{1}{2}F\odv[order=2]{F}{\eta}=0$\hfill\text{(solve numerically)}\\
+$2f'''+f\,f''=0$\hfill(Blasius' equation)\\
+The Blasius equation is subject to the following transformed boundary conditions:\\
+At $\eta=0$\hfill $f=0,\,f'=0$\\
+At $n\to\infty$\hfill $f'=1$\\
+$\frac{\delta_{99}}{x}=\frac{4.9}{\sqrt{\text{Re}_x}}$\\
+\subsection*{Calculating drag}
+$\tau_w=\mu\left(\pdv{u}{y}\right)_{y=0}=\mu\frac{V_\infty}{\delta}F''(0)$\\
+$\tau_w=0.332\mu\frac{V_\infty}{\delta}=0.332\mu V_\infty\sqrt{\frac{\rho V_\infty}{\mu x}}$\\
+$c_f=\frac{0.664}{\sqrt{\text{Re}_x}}$\\
+$C_f=\frac{1}{c}\int_0^c c_f\odif{x}=\frac{1.328}{\sqrt{\text{Re}_c}}$\\
+$D_f=\int_0^c\tau_0\odif{x}=0.664\sqrt{\rho\mu c V_\infty^2}$
+% $C_{D_f}=\frac{D_f}{\sfrac{1}{2}\rho V_\infty^2c}=\frac{1.328}{\sqrt{\text{Re}_c}}$
+\subsection*{Approximate solution}
+Assume $u(x,y)$ satisfying some conditions of B.L.: At $y=0$, $u=0$. At $y=\delta$, $u\approx V_\infty$, $\odv{u}/{y}\approx0$, $\odv[order=2]{u}/{y}\approx0$.\\
+% \begin{enumerate}
+%     \item At $y=0$, $u=0$
+%     \item At $y=\delta$, $u\approx V_\infty$
+%     \item At $y=\delta$, $\sfrac{du}{dy}\approx0$
+%     \item At $y=\delta$, $\sfrac{d^2u}{dy^2}\approx0$
+% \end{enumerate}
+$\frac{u}{V_\infty}=2\left(\frac{y}{\delta}\right)-\left(\frac{y}{\delta}\right)^2$\hfill(quadratic)\\
+$\frac{u}{V_\infty}=\frac{3}{2}\left(\frac{y}{\delta}\right)-\frac{1}{2}\left(\frac{y}{\delta}\right)^3$\hfill (cubic)\\
+$\frac{u}{V_\infty}=2\left(\frac{y}{\delta}\right)-2\left(\frac{y}{\delta}\right)^3+\left(\frac{y}{\delta}\right)^4$\hfill (quartic)\\
+$\frac{u}{V_\infty}=\sin\left(\frac{\pi y}{2\delta}\right)$\hfill(trigonometric)
+\subsection*{von Karman's momenutm integral theory}
+$\Theta=\int_0^\delta\left(1-\frac{u}{V_\infty}\right)\frac{u}{V_\infty}\odif{y}$\hfill(thickness)\\
+$\tau_w=\rho V_\infty^2\odv{\Theta}{x}=\frac{2\mu V_\infty}{\delta}=0.365\sqrt{\frac{\rho\mu V_\infty^3}{x}}$\\
+$\delta=5.48\sqrt{\frac{ux}{\rho V_\infty}}$\hfill(quadratic approx.)\\
+$D_f=\int_0^c\tau_w\odif{x}=0.73\sqrt{\rho\mu cV_\infty^3}$\\
+$C_{D_f}=\frac{D_f}{\sfrac{1}{2}\rho V_\infty^2c}=\frac{1.46}{\sqrt{\text{Re}_c}}$\\
+$V_\infty=\sqrt{\frac{2W}{c_{l,\text{max}}\rho c }}$\hfill(stall velocity)

@@ -1,0 +1,412 @@
+\documentclass[12pt, twocolumn, letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage[top=11mm,bottom=18mm,left=11mm,right=18mm]{geometry}
+\usepackage{blindtext}% http://ctan.org/pkg/blindtext
+\usepackage{setspace}
+\usepackage{xfrac}
+% \setstretch{0.975}
+\newcommand{\ihat}{\hat{\textbf{\i}}}
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+\newcommand{\qed}[0]{\quad\blacksquare}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
+\begin{document}
+\large
+% The $x$ component of velocity in an incompressible, inviscid flow is given by $u=Ax$, where $A=2 \,\text{s}^{-2}$ and the coordinates are in meters. The pressure at point $(x,y)=(0,0)$ is $190\,\text{kPa}$. The density is $1 \,\text{kg/m}^3$. Neglect gravity: (a) Evaluate the simplest possible $y$ component of velocity. (b) Determine the pressure gradient at point $(x,y)=(2,1)$. (c) Find the pressure distribution along the positive $x$-axis.\\
+% \begin{equation*}
+%     \begin{split}
+%         \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}&=0\\
+%         A+\frac{\partial v}{\partial y}&=0\\
+%         v&=-Ay\qed
+%     \end{split}
+% \end{equation*}
+% \begin{equation*}
+%     \begin{split}
+%         \rho u\frac{\partial u}{\partial x}+\rho v\frac{\partial u}{\partial y}&=-\frac{\partial p}{\partial x}\\
+%         \frac{\partial p}{\partial x}&=-\left\{\rho(Ax)(A)+\rho(-Ay)(0)\right\}\\
+%         &=-\rho A^2 x
+%     \end{split}
+% \end{equation*}
+% \begin{equation*}
+%     \begin{split}
+%         \frac{\partial p}{\partial y}&=-\left\{\rho u\frac{\partial v}{\partial x}+\rho v\frac{\partial v}{\partial y}\right\}\\
+%         &=-\left\{0+\rho(-Ay)(-A)\right\}\\
+%         &=-\rho A^2y
+%     \end{split}
+% \end{equation*}
+% \begin{equation*}
+%     \begin{split}
+%         \left(\nabla p\right)_{(2,1)}&=\frac{\partial p}{\partial x}\ihat +\frac{\partial p}{\partial y}\jhat\\
+%         &=-(1)(2)^2(2)\ihat-(1)(2)^2(1)\jhat\\
+%         &=-8\ihat-4\jhat\qed
+%     \end{split}
+% \end{equation*}
+% \begin{equation*}
+%     \begin{split}
+%         p(x,y=0)-p(0,0)&=\int_0^x\left(\frac{\partial p}{\partial x}\right)_{y=0}dx\\
+%         &=-\rho A^2\int_0^xx\,dx\\
+%         &=-\frac{\rho A^2x^2}{2}\\
+%         p(x,y=0)&=p(0,0)-\frac{\rho A^2x^2}{2}\qed
+%     \end{split}
+% \end{equation*}
+% \hline
+% Consider the flow represented by $\psi=Ax^2y$, where $A=2.5\,\text{m}^{-1}\text{s}^{-1}$. The density is $1200\,\text{kg/m}^3$. Coordinates are in meters. (a) Is this flow irrotational? (b) Can the pressure difference between points $(1,4)$ and $(2,1)$ be evaluated? If so, calculated it, and if not, explain why. Neglect gravity.\\
+% \begin{equation*}
+%     \begin{split}
+%         \psi&=Ax^2y\\
+%         u&=\frac{\partial \psi}{dy} = Ax^2\\
+%         v&=-\frac{\partial \psi}{\partial x}=-2Axy
+%     \end{split}
+% \end{equation*}
+% \begin{equation*}
+%     \omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}=-2Ay-0=-2Ay\neq0
+% \end{equation*}
+% So the flow is \textbf{NOT} irrotational. $\qed$\\
+% \begin{equation*}
+%     \begin{split}
+%         \psi(1,4)&=A(1)^2(4)=4A\\
+%         \psi(2,1)&=A(2)^2(1)=4A
+%     \end{split}
+% \end{equation*}
+% So points $(1,4)$ and $(2,1)$ are on the \textbf{same streamline}. So Bernoulli's equation can be used between them even if the flow is not irrotational.\\
+% \begin{equation*}
+%     p_1-p_2&=\frac{1}{2}\rho\left(V_2^2-V_1^2\right)
+% \end{equation*}
+% \begin{equation*}
+%     \begin{split}
+%         V_1^2&=u_1^2+v_1^2\\
+%         &=(Ax_1^2)^2+(2Ax_1y_1)^2\\
+%         &=\left\{(2.5)(1)^2\right\}^2+\left\{2(2.5)(1)(4)\right\}^2\\
+%         &=406.25\frac{\text{m}^2}{\text{s}^2}\\
+%     \end{split}
+% \end{equation*}
+% \begin{equation*}
+%     \begin{split}
+%         V_2&=u_2^2+v_2^2\\
+%         &=(Ax_2^2)^2+(2Ax_2y_2)^2\\
+%         &=\left\{(2.5)(2)^2\right\}^2+\left\{2(2.5)(2)(1)\right\}^2\\
+%         &=200\frac{\text{m}^2}{\text{s}^2}\\
+%     \end{split}
+% \end{equation*}
+% \begin{equation*}
+%     p_1-p_2&=-123,750\,\text{Pa}\qed
+% \end{equation*}
+% \hline
+% A velocity field is given as $\vec{V}=(x^2y-xy^2)\ihat+\left(\frac{y^3}{3}-xy^2\right)\jhat$. (a) Is this flow incompressible? (b) Obtain the expression of the stream function. (c) Does a velocity potential exist for this flow? (d) For the above velocity field, obtain the circulation over the triangular region as shown below.
+% \begin{center}
+%     \includegraphics[width=0.2\textwidth]{images/1-3.png}
+% \end{center}
+% The flow is incompressible as for the given flow, $\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0$, so $\psi$ exists $\qed$. Integrating $u=\frac{\partial \psi}{\partial y}=x^2y-xy^2$ yields $\psi=\frac{x^2y^2}{2}-\frac{xy^3}{3}+c_1$. Integrating $v=-\frac{\partial \psi}{\partial x}=\frac{y^3}{3}-xy^2$ yields $\psi=\frac{x^2y^2}{2}-\frac{xy^3}{3}+c_2$. Comparing, 
+% \begin{equation*}
+%     \psi=\frac{x^2y^2}{2}-\frac{xy^3}{3}+c \qed
+% \end{equation*}
+% \begin{equation*}
+%     \omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}=-y^2-(x^2-2xy)\neq0
+% \end{equation*}
+% So the flow is \textbf{NOT} irrotational. So $\phi$ does not exist $\qed$.
+% \begin{center}
+%     \includegraphics[width=0.35\textwidth]{images/1-3b.png}
+% \end{center}
+% For the diagram, $\vec{v}=u\ihat+v\jhat$ and $d\vec{l}=dx\ihat+dy\jhat$.
+% \begin{equation*}
+%     \Gamma=\oint\limits_c\vec{v}\cdot d\vec{l}=\int\limits_{AB}\vec{v}\cdot d\vec{l}+\int\limits_{BC}\vec{v}\cdot d\vec{l}+\int\limits_{CA}\vec{d}\cdot d\vec{l}
+% \end{equation*}
+% $\int_0^1u\,dx=0$ since along AB, $y=0$ and $dy=0$. $\int_0^1v\,dy=-\frac{1}{4}$ since $x=1$ and $dx=0$. $\int\limits_{CA}(udx+vdy)$ where $y=x$ gives $\int_0^1\left(-\frac{2}{3}y^3\right)dy=\frac{1}{6}$. So, $\Gamma=-\frac{1}{12}\qed$.
+% \hline
+
+% \hline
+The trailing edge flap is deployed in wing giving the following configuration. Calculate the lift coefficient and moment coefficient about the quarter-chord point.\\
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/6-2.png}
+\end{center}
+For $0\leq x\leq0.8l$, $\frac{dy}{dx}=\tan 5\degree=0.0875$\\
+$x=0.8l\implies \beta=?$\\
+$\frac{x}{l}=\frac{1}{2}(1-\cos\beta)\implies\beta=2.2 \text{rad}$\\
+For $x\geq0.8l$, $\frac{dy}{dx}=-\tan20\degree=-0.364$\\
+$A_0=\alpha-\frac{1}{\pi}\left[\int_0^{2.2}\frac{dy}{dx}d\beta+\int_{2.2}^\pi\frac{dy}{dx}d\beta\right]=\alpha+0.0458$\\
+$A_1=\frac{2}{\pi}\left[\int_0^{2.2}\frac{dy}{dx}\cos\beta\,d\beta+\int_{2.2}^\pi\frac{dy}{dx}\cos\beta,d\beta\right]=0.23$\\
+$A_2=\frac{2}{pi}\left[\int_0^{2.2}\frac{dy}{dx}\cos2\beta\,d\beta+\int_{2.2}^\pi\frac{dy}{dx}\cos2\beta\,d\beta\right]=-0.138$\\
+$C_L=2\pi\left(A_0+\frac{A_1}{2}\right)=1.5586$\\
+$C_{M,\text{LE}}=-\frac{\pi}{2}\left(A_0+A_1-\frac{A_2}{2}\right)=-0.6787$\\
+$C_{M,\sfrac{l}{4}}=C_{M,\text{LE}}+\frac{C_L}{4}=-0.2891$\\
+\hline
+The mean camber line of an airfoil of chord length $l$ is given by $\frac{y}{l}=2.6595\left\{\left(\frac{x}{l}\right)^3-0.6075\left(\frac{x}{l}\right)^2+0.1147\left(\frac{x}{l}\right)\right\}$ for $0\leq\frac{x}{l}\leq0.2025$ and $\frac{y}{l}=0.02208\left\{1-\left(\frac{x}{l}\right)\right\}$ for $0.2025\leq\frac{x}{l}\leq1$. Find the zero-lift angle of attack. Find the lift coefficient, moment coefficient about the quarter-chord point, and the location of the center-of-pressure at $\alpha=4\degree$.\\
+$\frac{dy}{dx}=2.6595\left[3\left(\frac{x}{l}\right)^2-1.215\left(\frac{x}{l}\right)+0.1147\right]$ for $0\leq\frac{x}{l}\leq0.2025$\\
+$\frac{dy}{dx}=-0.02208$ for $\frac{x}{l}\geq0.2025$\\
+Using $\frac{x}{l}=\frac{1}{2}(1-\cos\beta)$ we get $\beta=0.9335\text{rad}$.
+Hence, $\frac{dy}{dx}=2.6595\left[\frac{3}{4}(1-\cos\beta)^2-0.6075(1-\cos\beta)+0.1147\right]$ for $0\leq\beta\leq0.9335\text{rad}$ and $\frac{dy}{dx}=-0.02208$ for $0.9335\leq\beta\leq\pi$.\\
+$A_0=\alpha-\frac{1}{\pi}\left[\int_0^{0.9335}\frac{dy}{dx}d\beta+\int_{0.9335}^\pi\frac{dy}{dx}d\beta\right]=\alpha-0.02866$\\
+$A_1=\frac{2}{\pi}\left[\int_0^{0.9335}\frac{dy}{dx}\cos\beta\,d\beta+\int_{0.9335}^\pi\frac{dy}{dx}\cos\beta\,d\beta\right]=0.0954$\\
+$A_2=\frac{2}{\pi}\int_0^\pi\frac{dy}{dx}\cos2\beta\,d\beta=0.0792$\\
+$C_L=\pi(2A_0+A_1)=2\pi\alpha+0.1196$\\
+For zero lift, $C_L=0\implies\alpha=-0.019\text{rad}$.
+When $\alpha=4\degree=0.0698$, $C_L=0.5582$\\
+$C_{M,\text{LE}}=-\frac{\pi}{2}\left(A_0+A_1-\frac{A_2}{2}\right)=-0.152$\\
+$C_{M,\sfrac{l}{4}}=C_{M,\text{LE}}+\frac{C_L}{4}=-0.0127$\\
+$\frac{x_\text{cp}}{l}=-\frac{C_{M,\text{LE}}}{C_L}=0.2723$\\
+\hline
+Consider a circular arc airfoil of chord length 1m and camber 0.1m, at an angle of attack 15$\degree$. Assume the relation $x=2b\cos\theta$ is valid between the airfoil and a circular cylinder, find out the x-coordinate of the front stagnation point, AND the x location of minimum pressure on the airfoil.\\
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/5-1.png}
+\end{center}
+Equation of this circle is $x^2+(y-m)^2=R^2$. Note $m=\frac{h}{2}$ and $R^2=b^2+m^2$, $b=\frac{l}{4}$. This implies\\
+$x^2+\left(y-\frac{h}{2}\right)^2=\frac{l^2}{16}+\frac{h^2}{4}$\\
+The slope of the line passing through $s_1$ is $\tan\left(2\alpha+\tan^{-1}\frac{2h}{l}\right)\approx\tan\left(2\alpha+\frac{2h}{l}\right)\approx2\alpha+\frac{2h}{l}$\\
+The equation of this line: $y=\left(2\alpha+\frac{2h}{l}\right)x+m=\left(2\alpha+\frac{2h}{l}\right)x+\frac{h}{2}$\\
+The intersection of this line with the circle gives coordinates of $s_1$ on the cylinder. Taking the negative value of $x$ and $y$, using $\alpha=15\degree, h=0.1\text{m}, l=1\text{m}$\\
+$x=-0.207\text{m}, y=-0.0998\text{m}$\\
+Then, $\theta$ for $s_1$ is $\pi+\tan^{-1}\frac{y}{x}=205.7\degree$. Then for airfoil\\
+$x=2b\cos\theta=\frac{l}{2}\cos\theta=-0.45\text{m}$\\
+Equation of straight line passing through pt. E:\\
+$y=-\tan\left(\frac{\pi}{2}-\alpha\right)x+m=-x\cot\alpha+\frac{h}{2}$\\
+Find the intersection with E:\\
+$x=-0.252\text{m},y=0.99\text{m}$\\
+Then, $\theta$ for this point E is $\tan^{-1}\frac{y}{x}=-75\degree$\\
+$\theta=\pi-75\degree=105\degree$.\\
+Then, for the airfoil:
+$x=2b\cos\theta=\frac{l}{2}\cos\theta=-0.13\text{m}$\\
+\hline
+A uniform flow having velocity magnitude $V_\infty$ is directed at an angle $\alpha$ with respect to the x-axis as shown below. Obtain the epxression of the stream function and potential function.\\
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/4-1.png}
+\end{center}
+$u=V_\infty\cos\alpha=\frac{\partial \psi}{\partial y}$\\
+$\implies\psi=V_\infty y\cos\alpha+ F(x)$\\
+$v=V_\infty\sin\alpha=\frac{-\partial \psi}{\partial x}$\\
+$\implies \psi=-V_\infty x\sin\alpha + F(y)$\\
+By comparison, $\psi=V_\infty\left(-x\sin\alpha+y\cos\alpha\right)$\\
+Similarly, $\phi=-V_\infty\left(x\cos\alpha+y\sin\alpha\right)$
+\hline
+Consider a doublet for which the axis is rotate by an angle $\alpha$ as shown below. Obtain the epxressions of the stream function and potential function.
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/4-2a.png}
+\end{center}
+In $x'y'$ or $r'\theta'$ domain, $\phi=-\frac{\Lambda\cos\theta}{r'}$, $\psi=-\frac{\Lambda\sin\theta}{r'}$.\\
+Note $r'=r$ and $\theta'=\theta-\alpha$.\\
+Then, $\phi=-\frac{\Lambda\cos(\theta-\alpha)}{r}$, $\psi=-\frac{\Lambda\sin(\theta-\alpha)}{r}$\\
+\hline
+Consider a flat-plate airfoil of chord length $l=3\text{m}$. Obtain the location of the front stagnation point for $\alpha=5,10,20,40\degree$.
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/4-4.png}
+\end{center}
+$s_2$ and $s_1$ move by same amount ($\beta$). For this case, $\beta=\alpha$, so location of $s_1$ is $\theta=\pi+2\alpha$.\\
+Then, $x=2b\cos\theta=-\frac{l}{2}\cos(2\alpha)$. Given $l=3\text{m}$ and several values of $\alpha$, we can find $x$.\\
+\hline
+Obtain an expression of stream function for the flow around a flat-plate airfoil of length $l$ at an angle of attack $\alpha$:\\
+For lifting flow over a cylinder at an angle of attack $\alpha$:\\
+$\psi=V_\infty r\left(1-\frac{R^2}{r^2}\right)\sin(\theta-\alpha)+\frac{\Gamma}{2\pi}\ln r$\\
+$\Gamma=\pi V_\infty l\sin\alpha$\\
+$R=b=\frac{l}{4}$ for the flat-plate.\\
+$\psi=V_\infty r \left(1-\frac{l^2}{16r^2}\right)\sin(\theta-\alpha)+\frac{V_\infty l\sin\alpha}{2}\ln r$\\
+\hline
+From the above example 4 with several alpha values: plot the pressure coefficients over the top and bottom surfaces as functions of $\frac{x}{l}$, where $x$ is the distance from the leading edge.\\
+$V_s=-2V_\infty\sin(\theta-\alpha)-\frac{\Gamma}{2\pi b}$ which is for a lifting cylinder of radius $b$ at an angle of attack $\alpha$.\\
+But, $\Gamma=4\pi V_\infty b\sin\alpha$, so\\
+$V_s=-2V_\infty\sin(\theta-\alpha)-2V_\infty\sin\alpha$\\
+Then, $C_p=1-4\left[\sin(\theta-\alpha)+\sin\alpha\right]^2$\\
+For top surface, $\theta=0\to\pi$. For bottom surface, $\theta=\pi\to2\pi$.\\
+\hline
+Consider the lifting flow over a circular cylinder of radius 1m as shown below. The freestream air approaches at an angle of attack of $\alpha=30\degree$, and the air speed $V_\infty=$100m/s. It is found that the rear stagnation point is located at $\theta=0$ as marked in the figure. (a) Obtain the location of the front stagnation point. (b) Obtain the value of the circulation. (c) Obtain the lift. (d) Obtain the angle at which the lift is acting with respect to the y-axis. You may assume the density of air to be 1 kg/m$^3$.\\
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/3-1a.png}
+\end{center}
+Given $s_2$ is at $\theta=0$, $\beta=30\degree$\\
+Since $s_2$ has moved by $30\degree$, $s_1$ must also move by same amount.\\
+(a) So $s_1$ is located at $\theta=240\degree$.\\
+(b) $\sin\beta=\frac{\Gamma}{4\pi V_\infty R}\implies\Gamma=4\pi V_\infty R\sin\beta=628.32\frac{m^2}{s}$\\
+(c) $L=\rho V_\infty \Gamma=62832 \frac{N}{m}$\\
+(d) Lift is at $30\degree$ with respect to y-axis as shown.\\
+\hline
+Consider the lifting flow past a cylinder of radius R=1m as shown below. The incoming flow speed is $V_\infty=100$m/s, pressure $P_\infty$=100 kN/m$^2$. Both stagnation points merge to a single point that is located at $20\degree$ with respect to the y-axis as shown. The density of air is 1 kg/m$^3$. (a) Obtain the angle of attack $\alpha$. (b) Obtain the magnitude of the lift. (c) Is the vortex used here a clockwise or a counter-clockwise vortex?\\
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/3-2.png}
+    \includegraphics[width=0.45\textwidth]{images/3-2a.png}
+\end{center}
+(a) When both stagnation points merge, the angle $\beta$ as defined in class is $90\degree$. $\implies \alpha=20\degree$\\
+(b) $\Gamma=4\pi V_\infty R\sin(90\degree)=4\pi V_\infty R$\\
+$L=\rho V_\infty \Gamma=125.664$kN/m\\
+(c) CCW vortex from inspection.\\
+\hline
+A sink is located at (0,0) on a surface. A uniform flow over the surface is also present. (a) Obtain the location of the stagnation point. (b) Find the pressure distribution along the surface.
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/2-1.png}
+    \includegraphics[width=0.45\textwidth]{images/2-1a.png}
+\end{center}
+The surface at $y=0$ is the horizontal streamline.\\
+$\psi=V_\infty r\sin\theta-\frac{Q}{2\pi}\theta$\\
+$V_r=V_\infty\cos\theta-\frac{Q}{2\pi r}$\\
+$V_\theta=-V_\infty\sin\theta$\\
+For y=0 streamline, $\theta=0, \pi$ and $V_\theta=0$. $\theta=0$ at A.\\
+Letting $V_r=0$:\\
+$V_\infty\cos\theta-\frac{Q}{2\pi r}=0 \to r\cos\theta=\frac{Q}{2\pi V_\infty} \to x=\frac{Q}{2\pi V_\infty}$\\
+$V_r=V_\infty\cos\theta-\frac{Q}{2\pi r}$\\
+Note $r=\frac{x}{\cos\theta}$\\
+Then, $V_r=V_\infty\cos\theta-\frac{Q\cos\theta}{2\pi x}=\left(V_\infty-\frac{Q}{2\pi x}\right)\cos\theta$\\
+Then, $V_\theta\,\vline_{y=0}=0$ and $V_r\,\vline_{y=0}=\left(V_\infty-\frac{Q}{2\pi x}\right)\cos\theta=\pm\left(V_\infty-\frac{Q}{2\pi x}\right)$\\
+Using Bernoulli's equation:\\
+$P\,\vline_{y=0}=P_\infty+\frac{1}{2}\rho V_\infty^2-\frac{1}{2}\rho V^2\,\vline_{y=0}$\\
+$P=P_\infty+\frac{1}{2}\rho V_\infty^2\left[1-\frac{V_r^2}{V_\infty^2}\right]$\\
+$P=P_\infty+\frac{1}{2}\rho V_\infty^2\left[\frac{Q}{\pi x V_\infty}-\frac{Q^2}{4\pi^2x^2V_\infty^2}\right]$\\
+\hline
+Obtain the locations of the stagnation points of the Rankine oval.
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/2-2.png}
+\end{center}
+A, and B are stagnation points. Note $r\sin\theta=y$ and $\theta_1=\tan^{-1}\frac{y}{x+b},\theta_2=\tan^{-1}\frac{y}{x-b}$\\
+$\psi=V_\infty r\sin\theta+\frac{Q}{2\pi}\theta_1-\frac{Q}{2\pi}\theta_2$\\
+$\psi=V_\infty y + \frac{Q}{2\pi}\left[\tan^{-1}\frac{y}{x+b}-\tan^{-1}\frac{y}{x-b}\right]$\\
+$u=\frac{\partial \psi}{\partial y}=V_\infty+\frac{Q}{2\pi}\left[\frac{x+b}{(x+b)^2+y^2}-\frac{x-b}{(x-b)^2+y^2}\right]$\\
+By symmetry, $v=0$ along $y=0$. Since $y\vline_A=y\vline_B=0$, and if we let $u\vline_A=u\vline_B=0$:\\
+$0=V_\infty+\frac{Q}{2\pi}\left[\frac{x+b}{(x+b)^2}+\frac{x-b}{(x-b)^2}\right]$\\
+$\implies x=\pm\sqrt{b^2+\frac{Qb}{\pi V_\infty}}$ are the locations of the stagnation points.\\
+\hline
+Consider inviscid, irrotational flow over a hut of semi-circular cross-section of radius R. A tiny hole exists on the hut at a point A that is at an angle $\sfrac{\pi}{4}$ with respect to the x-axis. The pressure inside the hut is equal to the outside pressure at this location. Find the net force on the hut (aerodynamic force).
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/2-3.png}
+\end{center}
+This problem is half-cylinder in non-lifting flow where y=0 line is a streamline and hence can be considered as the surface. Then,\\
+$P_\text{outside}=P_o=P_s=P_\infty+\frac{1}{2}\rho V_\infty^2(1-4\sin^2\theta)$\\
+$P_\text{inside}=P_i=$ outside pressure at $\theta=\alpha$\\
+Hence, $P_i=P_o\,\vline_{\theta=\alpha}=P_\infty+\frac{1}{2}\rho V_\infty^2(1-4\sin^2\alpha)$\\
+Net pressure = $P_o-P_i=P_s-P_i$\\
+By symmetry about the y-axis, $F_x=0$\\
+$F_y=\int_0^\pi-\left(P_s-P_i\right)\sin\theta R\,d\theta$\\
+$\implies F_y=\frac{8}{3}\rho R V_\infty^2-4\rho R V_\infty^2\sin^2\alpha$\\
+\hline
+The x component of velocity in an incompressible, inviscid flow is given by $u=Ax$, where $A=2$ and the coordinates in meters. The pressure at point (x,y) = (0,0) is 190 kPa. The density is 1kg/m$^3$. Neglect gravity. (a) Evaluate the simplest possible y component of velocity. (b) Determine the pressure gradient at point (x,y)=(2,1). (c) Find the pressure distribution along the positive x-axis\\
+$\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0\implies A+\frac{\partial v}{\partial y}=0 \implies v=-Ay$\\
+$\rho u\frac{\partial u}{\partial x}+\rho v\frac{\partial u}{\partial y}=-\frac{\partial P}{\partial x}\implies\frac{\partial P}{\partial x}=-\left[\rho(Ax)(A)+\rho(-Ay)(0)\right]=-\rho A^2x$\\
+Similarly, $\frac{\partial P}{\partial y}=-\left[\rho u\frac{\partial v}{\partial x}+\rho v\frac{\partial v}{\partial y}\right]=-\left[0+\rho(-Ay)(-A)\right]=-\rho A^2y$\\
+So, $\nabla P (2,1) = \frac{\partial P}{\partial x}\hat{i}+\frac{\partial P}{\partial y}\hat{j}=-(1)(2)^2(2)\hat{i}-(1)(2)^2(1)\hat{j}=-8\hat{i}-4\hat{j}$\\
+$P(x, y=0)-P(0,0)=\int_0^x\frac{\partial P}{\partial x}\,\vline_{y=0}\,dx=-\rho A^2\int_0^x x\,dA=-\frac{\rho A^2x^2}{2}$\\
+$P(x,y=0)=P(0,0)-\frac{\rho A^2x^2}{2}$\\
+\hline
+Consider the flow represented by $\psi=Ax^2y$, where $A=2.5$. The density is 1200 kg/m$^3$. (a) Is this flow irrotational? (b) Can the pressure difference between points (1,4) and (2,1) be evaluated? If so, calculate it, and if not, explain why. Neglect gravity.\\
+$\psi=Ax^2y,u=\frac{\partial \psi}{\partial y}=Ax^2, v=-\frac{\partial \psi}{\partial x}=-2Axy$\\
+$\omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}=-2Ay-0=-2Ay\neq0$ so the flow is NOT irrotational.\\
+$\psi(1,4)=4A,\psi(2,1)=4A$ so points (1,4) and (2,1) are on the same streamline, so Bernoulli's equation can be used between them.\\
+$P_1-P_2=\frac{1}{2}\rho\left(v_2^2-v_1^2\right)$\\
+$v_1^2=u_1^2+v_1^2=(Ax_1^2)^2+(2Ax_1y_1)^2=406.25$\\
+$v_2^2=u_2^2+v_2^2=(Ax_2)^2+(2Ax_2y_2)^2=200$\\
+\hline
+A velocity field is given as $\vec{V}=(x^2y-xy^2)\hat{i}+\left(\frac{y^3}{3}-xy^2\right)\hat{j}$. (a) Is this flow incompressible? (b) Obtain the expression of the stream function. (c) Does a velocity potential exist for this flow? (d) For the above velocity field, obtain the circulation over the triangular region as shown below (right triangle from 0,0 to 1,1)\\
+The flow is incompressible since $\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0$, so $\psi$ exists.\\
+$u=\frac{\partial \psi}{\partial y}=x^2y-xy^2$\\
+Integrate, $\psi=\frac{x^2y^2}{2}-\frac{xy^3}{3}+C_1$\\
+Also, $v=-\frac{\partial \psi}{\partial x}=\frac{y^3}{3}-xy^2$\\
+Integrate, $\psi=\frac{x^2y^2}{2}-\frac{xy^3}{3}+C_2$\\
+Comparing, $\psi=\frac{x^2y^2}{2}-\frac{xy^3}{3}+C$\\
+$\omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}=-y^2-(x^2-2xy)\neq0$ so the flow is NOT irrotational, so $\phi$ does not exist.\\
+$\Gamma=\oint_C\vec{v}\cdot\,d\vec{l}=\int_\text{AB}\vec{v}\cdot\,d\vec{l}+\int_\text{BC}\vec{v}\cdot\,d\vec{l}+\int_\text{CA}\vec{v}\cdot\,d\vec{l}$\\
+(1) = $\int_0^1udx=0$ since along AB, y=0 and dy=0\\
+(2) = $\int_0^2vdy=-\frac{1}{4}$ since x=1 and dx =0\\
+(3) = $\int_\text{CA}(udx+vdy)=\int_\text{CA}\left[(x^3-x^3)dx+(\frac{y^3}{3}-y^3)dy\right]=\int_\text{CA}-\frac{2y^3}{3}dy=\int_0^1(-\frac{2}{3}y^3)dy=\frac{1}{6}$\\
+\hline
+Consider a finite-span wing with a \textit{non-elliptical} platform. The aspect ratio is 6, and a zero-lift angle of attack is -2 degrees. At an angle of attack 3.4 degree, the total induced drag coefficient for this wing is 0.01. What would be the total induced drag coefficient if the aspect ratio is increased to 10 but the angle of attack remains the same. Assume same airfoil cross-section in the two cases. Assume $\epsilon_1=\epsilon_2=0.005$ for $\AR=6$, and $\epsilon_1=\epsilon_2=0.105$ for $\AR=10$.\\
+For $\AR=6$, 
+\begin{equation*}
+    C_{L,\text{3D}}^2=\frac{\pi\AR C_{D_i}}{1+\epsilon_1}=\frac{\pi(6)(0.01)}{1+0.005}=0.18756
+\end{equation*}
+So, $C_{L,\text{3D}}=0.4331$ at $\alpha=3.4\degree$. Then, slope of lift curve (3D)
+\begin{equation*}
+    a=\frac{0.4331-0}{3.4\degree-(-2\degree)}=0.0802/\text{deg}=4.5953/\text{rad}
+\end{equation*}
+Then, find the slope of the lift curve for 2D airfoil, $a_o$
+\begin{equation*}
+    a=\frac{a_o}{1+\left(\frac{a_o}{\pi\AR}\right)(1+\epsilon_1)}
+\end{equation*}
+Using $a=4.5953$, $\AR=6$, $\epsilon_1=0.005$ we get $a_o=6.0865/\text{rad}$. This $a_o$ is same for both $\AR=6$ and $\AR=10$. So now for $\AR=10$, we get
+\begin{equation*}
+    a=\frac{a_o}{1+\left(\frac{a_o}{\pi\AR}\right)(1+\epsilon_1)}=5.0133/\text{rad}=0.0875/\text{deg}
+\end{equation*}
+Since the same 2D airfoil... and, we have same $a_{L=0}=-2\degree$.
+\begin{equation*}
+    C_{L,\text{3D}}=a\left(\alpha-\alpha_{L=0}\right)=0.0875(3.4+2)=0.4723
+\end{equation*}
+\begin{equation*}
+    C_{D_i}=\frac{C_{L,\text{3D}}^2}{\pi\AR}(1+\epsilon_1)=\frac{0.4723^2}{\pi (10)}(1+0.105)=0.00785
+\end{equation*}
+\hline
+Consider the exact/similarity/Blasius solution of a boundary layer developed over a flat surface of length 2m. If the friction drag coefficient is measured to be 0.01, obtain the thickness of the boundary layer $\delta_{0.99}$ at a location 0.5m from the leading edge.
+\begin{equation*}
+    C_{D_f}=\frac{1.328}{\sqrt{\text{Re}_l}}=0.01\implies \text{Re}_l=17636
+\end{equation*}
+\begin{equation*}
+    \frac{\rho V_\infty l}{\mu}=17636\implies\frac{\rho V_\infty}{\mu}=\frac{17636}{2}=8919
+\end{equation*}
+\begin{equation*}
+    \delta_{0.99}=4.9\sqrt{\frac{\mu x}{\rho V_\infty}}=4.9\sqrt{\frac{0.5}{8918}}=0.037\text{m}
+\end{equation*}
+\hline
+Consider an approximate velocity profile of a boundary layer given by
+\begin{equation*}
+    \frac{u}{V_\infty}=a+b\left(\frac{y}{\delta}\right)+c\left(\frac{y}{\delta}\right)^2+d\left(\frac{y}{\delta}\right)^3+e\left(\frac{y}{\delta}\right)^4
+\end{equation*}
+Find the coefficients $a,b,c,d,e$. In addition to the conditions mentioned in class, you will need another condition $\frac{\partial^2u}{\partial y^2}=0$ at $y=0$. Then, using von Karman momentum integral theorem, find the friction drag coefficient.\\
+Following conditions can be used
+\begin{equation*}
+    u|_{y=0}=0\quad\frac{du}{dy}|_{y=\delta}=0\quad u|_{y=\delta}=V_\infty
+\end{equation*}
+\begin{equation*}
+    \frac{d^2u}{dy^2}|_{y=0}=0\quad\frac{d^2u}{dy^2}|_{y=\delta}=0
+\end{equation*}
+So, $a=0$, $b=2$, $c=0$, $d=-2$, $e=1$. Then, $\frac{u}{V_\infty}=\frac{2y}{\delta}-2\left(\frac{y}{\delta}\right)^3+\left(\frac{y}{\delta}\right)^4$.
+\begin{equation*}
+    \tau_0=\mu\frac{du}{dy}|_{y=0}=\frac{2\mu V_\infty}{\delta}
+\end{equation*}
+\begin{equation*}
+    \Theta=\int_0^\delta\frac{u}{V_\infty}\left(1-\frac{u}{V_\infty}\right)dy=\frac{37}{315}\delta
+\end{equation*}
+\begin{equation*}
+    \tau_0=\rho V_\infty^2\frac{d\Theta}{dx}\implies\frac{2\mu V_\infty}{\delta}=\rho V_\infty^2\left(\frac{37}{315}\right)\frac{d\delta}{dx}
+\end{equation*}
+\begin{equation*}
+    \delta\frac{d\delta}{dx}=\frac{630}{37}\frac{\mu}{\rho V_\infty}
+\end{equation*}
+Integrating
+\begin{equation*}
+    \frac{\delta^2}{2}=\frac{630}{37}\frac{\mu x}{\rho V_\infty}+A
+\end{equation*}
+$x=0\implies\delta=0\implies A=0$. Hence
+\begin{equation*}
+    \delta=5.8356\sqrt{\frac{\mu x}{\rho V_\infty}}
+\end{equation*}
+\begin{equation*}
+    \tau_0=0.3427\sqrt{\frac{\mu\rho V_\infty^3}{x}}
+\end{equation*}
+\begin{equation*}
+    D_f=\int_0^l\tau_0dx=0.6854\sqrt{\rho\mu l V_\infty^3}
+\end{equation*}
+\begin{equation*}
+    C_{D_f}=\frac{D_f}{\sfrac{1}{2}\rho V_\infty^2 l}=\frac{1.3708}{\sqrt{\text{Re}_l}}
+\end{equation*}
+\hline
+Consider a 2D airfoil with a zero lift angle of attack of -4 degrees. The stall angle for this airfoil is 15 degrees, where the maximum 2D lift coefficient is found to be 2.0. This airfoil is used in an aircraft with a non-elliptic wing of span 20m and platform area of 60 m$^2$. If $\epsilon_1=\epsilon_2=0.01$, the weight of the plane is $10^5$ Newton, density of air is $1$ kg/m$^3$, find out the maximum landing speed that the plane can have. The 2D lift slope
+\begin{equation*}
+    a_o=\frac{2-0}{15-(-4)}=\frac{2}{19}/\text{deg}=6.0311/\text{rad}
+\end{equation*}
+The slope of 3D lift curve:
+\begin{equation*}
+    a=\frac{a_o}{1+\frac{a_o(1+\epsilon_1)}{\pi\AR}}=\frac{6.031}{1+\frac{(6.031)(1.01)}{\pi\frac{20^2}{60}}}=4.672
+\end{equation*}
+Assume stall occurs at same angle. So,
+\begin{equation*}
+    C_{L,\text{3D,max}}=4.672\left(\frac{15-(-4)}{180}\right)\pi=1.549
+\end{equation*}
+For a 3D wing,
+\begin{equation*}
+    C_{L,\text{3D,max}}=\frac{L_\text{3D}}{\sfrac{1}{2}\rho V_\infty^2 S}
+\end{equation*}
+At stall, $L_\text{3D}=W$ and $V_\infty=V_\text{stall}$.
+\begin{equation*}
+    V_\text{stall}=\sqrt{\frac{2W}{\rho C_{L,\text{3D}}S}}=\sqrt{\frac{2\cdot10^5}{1\cdot1.549\cdot60}}=46.39\text{m/s}
+\end{equation*}
+
+
+
+\end{document}

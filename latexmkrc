@@ -1,0 +1,1 @@
+END { system('convert -density 600 -background white -flatten output.pdf[0] page1.png'); }

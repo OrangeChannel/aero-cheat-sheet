@@ -1,0 +1,30 @@
+\section{Review of Fluids}
+\subsection*{Coefficient definitions}
+$q_\infty = \frac{1}{2} \rho V_\infty^2$\\
+$C_p = \frac{p-p_\infty}{q_\infty} \hfill c_f = \frac{\tau_w}{q_\infty}$\\
+$C_L = \frac{L}{q_\infty S}        \hfill C_D = \frac{D}{q_\infty S}$\\
+$c_l = \frac{L'}{q_\infty c}       \hfill c_d = \frac{D}{q_\infty c}$
+\subsection*{Conservation of mass}
+$\oiint\limits_S \rho \mathbf{V} \cdot = -\pdv{}{t} \oiiint\limits_\mathcal{V} \rho \odif{\mathcal{V}}$\hfill(continuity, int)\\
+$\pdv{\rho}{t}+\nabla\cdot\left(\rho\mathbf{V}\right)=0$\hfill(continuity, diff)\\
+For steady flow, $\pdv{}/{t}=0$:\\
+$\oiint\limits_{S}\rho\mathbf{V}\cdot\odifbold{\mathbf{S}}=0\hfill\nabla\cdot\left(\rho\mathbf{V}\right)=0$\\
+In 2D with constant $\rho$:\\
+$\pdv{u}{x}+\pdv{v}{y}=0$
+\subsection*{Conservation of momentum}
+$\pdv{}{t} \oiiint\limits_\mathcal{V} \rho \mathbf{V} \odif{\mathcal{V}} + \oiint\limits_S \left(\rho \mathbf{V} \cdot \odifbold{\mathbf{S}}\right) \mathbf{V} = -\oiint\limits_S \rho \odifbold{\mathbf{S}} + \oiiint\limits_\mathcal{V} \rho \mathbf{f} \odif{\mathcal{V}} + \mathbf{F}_\text{viscous}$\hfill(momentum, int)\\
+$\int \rho \vec{g} \odif{V} + \int \underline{\underline{\tau}} \cdot  \odif{\vec{s}} = \pdv{}{t} \int \rho \vec{v} \odif{V} + \int \rho \vec{v} \left(\vec{v} \cdot \odif{\vec{s}}\right)$\\
+For an incompressible fluid, we have the Navier-Stokes equation:\\
+$\rho \vec{g} + \mu \nabla^2 \vec{v} - \nabla p = \rho \pdv{\vec{v}}{t} + \rho \vec{v} \cdot \nabla \vec{v}$\\
+$\rho g_x + \mu \left(\pdv[order=2]{u}{x} + \pdv[order=2]{u}{y}\right) - \pdv{p}{x} = \rho \pdv{u}{t} + \rho \left[u \pdv{u}{x} + v \pdv{u}{y}\right]$\hfill(x-comp)
+\subsection*{Aerodynamic force}
+$\vec{F}=\int\left(-p\right)d\vec{s}+\int\underline{\underline{\tau}}\cdot d\vec{s}$
+\subsection*{Reynold's number}
+Reynold's number is the dimensionless ratio of convection to diffusion or inertial to viscous forces.\\
+$\text{Re}=\frac{\rho V_\infty L}{\mu}$
+% \subsection*{Boundary layer}
+% $\delta=5L\text{Re}^{-1/2}$
+\subsection*{Euler's equation (Navier + inviscid)}
+$\rho g_x - \pdv{p}{x} = \rho \pdv{u}{t} + \rho \left[u \pdv{u}{x} + v \pdv{u}{y}\right]$
+\subsection*{Streamlines}
+$\odifbold{\mathbf{s}} \times \mathbf{V} = 0 \to v\odif{x} - u\odif{y}=0$\hfill(in 2D)

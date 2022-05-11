@@ -1,0 +1,87 @@
+\section{Irrotational Flow}
+\subsection*{Vorticity}
+$\vec{\omega} = \nabla \times \mathbf{V}$\\
+If $\vec{\omega}=0$, the flow is \textit{irrotational}.\\
+$\omega_z = \pdv{v}{x} - \pdv{u}{y}$\hfill(2D, rect)\\
+$\vec{\omega} = \frac{1}{r} \pdv*[fun=true]{r V_\theta}{r} - \frac{1}{r} \pdv{V_r}{\theta}$\hfill(2D, cyl)
+\subsection*{Circulation}
+$\Gamma = \ointctrclockwise_C \mathbf{V} \cdot \odifbold{\mathbf{s}} = \int \vec{\omega} \cdot \odif{\vec{s}}$\\
+$\Gamma = \int_s \omega \odif{s}$\hfill(in 2D)
+\subsection*{Bernoulli's equation}
+If flow is incompressible and inviscid we can integrate Euler's to get Bernoulli's:\\
+$\frac{p}{\rho}+\frac{1}{2}V^2+gz=\text{const}$\\
+Generally, Bernoulli's can only be applied along streamlines. If the flow is irrotational, Bernoulli's applies everywhere.
+\subsection*{Stream function (incompressible)}
+$u   = \pdv{\psi}{y}                   \hfill v      = -\pdv{\psi}{x}$\\
+$V_r = \frac{1}{r}\pdv{\psi}{\theta} \hfill V_\theta = -\pdv{\psi}{r}$\\
+Along a streamline, $\psi=\text{const}$\\
+$\Delta\psi=c_2-c_1$ represents the volumetric flow between streamlines per unit depth.
+\subsection*{Potential function (irrotational)}
+$u   = -\pdv{\phi}{x} \hfill   v        = -\pdv{\phi}{y}$\\
+$V_r = -\pdv{\phi}{r} \hfill   V_\theta = -\frac{1}{r} \pdv{\phi}{\theta}$\\
+$\pdv{\psi}{x} = \pdv{\psi}{y} = 0$ \hfill\text{(Along a streamline)}
+\subsection*{Relating stream/potential functions}
+$\left( \odv{y}{x} \right)_{\psi=\text{const}} =  \frac{v}{u}$\\
+$\left( \odv{y}{x} \right)_{\phi=\text{const}} = -\frac{u}{v}$\\
+So, the products of the two above quantities will always be $-1$. A line of constant $\psi$ is an \textbf{equipotential line}. Equipotential lines are perpendicular to streamlines (for 2D irrotational flows).
+\subsection*{Laplacian}
+$\nabla^2\psi=0$ and $\nabla^2\phi=0$ is satisfied if both \textit{incompressible} and \textit{irrotational}.
+\subsection*{Steps to solve}
+1) Solve $\nabla^2\psi=0$ and $\nabla^2\phi=0$ to get $\psi(x,y)$ and $\phi(x,y)$\\
+2) Solve $u=\pdv{\psi}{y},v=-\pdv{\psi}{x}$ to get $u,v$\\
+3) Setup $\vec{F}=\int\left(-p\right)\odif{\vec{s}}$\\
+4) Use Bernoulli's to get $p$
+\subsection*{Uniform flow}
+$u=V_\infty\hfill v=0$\\
+$\psi=V_\infty y\hfill \phi=-V_\infty x$\\
+$\Gamma = 0\hfill\vec{\omega}=0$
+% $\psi=V_\infty y=V_\infty r\sin\theta$\\
+% $\phi=-V_\infty x=-V_\infty r\cos\theta$
+\subsection*{Source flow}
+$V_r=\frac{Q}{2\pi r}\hfill V_\theta=0$\\
+$\psi=\frac{Q}{2\pi}\theta\hfill \phi=-\frac{Q}{2\pi}\ln r$
+\subsection*{Sink flow}
+$V_r=-\frac{Q}{2\pi r}\hfill V_\theta=0$\\
+$\psi=-\frac{Q}{2\pi}\theta\hfill \phi=\frac{Q}{2\pi}\ln r$
+\subsection*{Uniform + source (airfoil)}
+$\psi=V_\infty r\sin\theta+\frac{Q}{2\pi}\theta\implies\psi_\text{sur}=\frac{Q}{2}$\\
+stagnation point at $\theta=\pi,\,\,a=\frac{Q}{2\pi V_\infty}$
+\subsection*{Rankine oval (uniform + source + sink)}
+$\psi=V_\infty r\sin\theta+\frac{Q}{2\pi}\theta_1-\frac{Q}{2\pi}\theta_2$\\
+$\text{OS}_1=\text{OS}_2=\sqrt{b^2+\frac{Qb}{\pi V_\infty}}$\\
+$b$ is dist from origin to source or sink
+\subsection*{Doublet (source + sink at origin)}
+With $\Lambda$ as the strength of the doublet:
+$\psi=-\frac{\Lambda\sin\theta}{r}\hfill \phi=-\frac{\Lambda\cos\theta}{r}$\\
+$V_r=-\frac{\Lambda\cos\theta}{r^2}\hfill V_\theta=-\frac{\Lambda\sin\theta}{r^2}$
+\subsection*{Non-lifting cylinder (uni. + doublet)}
+$\psi=\left(V_\infty r\sin\theta\right)\left(1-\frac{R^2}{r^2}\right)$\\
+$V_r=\left(1-\frac{R^2}{r^2}\right)V_\infty\cos\theta$\\
+$V_\theta=-\left(1+\frac{R^2}{r^2}\right)V_\infty\sin\theta$\\
+$V_s=V_{\theta(r=R)}=-2V_\infty\sin\theta$\\
+$p_s=p_\infty+\frac{1}{2}\rho V_\infty^2(1-4\sin^2\theta)$\\
+$C_p=1-\left(\frac{V_s}{V_\infty}\right)^2=1-4\sin^2\theta$\\
+$C_p$ reaches a maximum of 1 at the stag. points
+\subsection*{Irrotational vortex (CCW)}
+The circulation around a curve enclosing the center of the vortex is \textit{not} zero.\\
+$V_r=0\hfill V_\theta=\frac{\Gamma}{2\pi r}$\\
+$\psi=\frac{-\Gamma}{2\pi}\ln r\hfill \phi=\frac{-\Gamma}{2\pi}\theta$
+\subsection*{Lifting flow (non-lifting + CW vortex)}
+$\psi=\left(V_\infty r\sin\theta\right)\left(1-\frac{R^2}{r^2}\right)+\frac{\Gamma}{2\pi}\ln r$\\
+$V_r=\left(1-\frac{R^2}{r^2}\right)V_\infty\cos\theta$\\
+$V_\theta=-\left(1+\frac{R^2}{r^2}\right)V_\infty\sin\theta-\frac{\Gamma}{2\pi r}$\\
+$C_p=1-\left[4\sin^2\theta+\frac{2\Gamma\sin\theta}{\pi R V_\infty}+\left(\frac{\Gamma}{2\pi R V_\infty}\right)^2\right]$\\
+$p_s=p_\infty+\frac{1}{2}\rho\left[V_\infty^2-\left(2V_\infty\sin\theta+\frac{\Gamma}{2\pi R}\right)^2\right]$\\
+% $\text{Lift per unit length}=L'=\rho V_\infty\Gamma$\\
+$V_s=-2V_\infty\sin\theta-\frac{\Gamma}{2\pi R}$\\
+$\sin\beta=\frac{\Gamma}{4\pi V_\infty R}\implies\Gamma=4\pi V_\infty R\sin\beta$\\
+$c_l=\frac{\Gamma}{R V_\infty}$\\
+With a chord length of $c=2R$, the planform area $S=2R(1)=2R$.\\
+$L'=\rho V_\infty \Gamma=4\pi\rho V_\infty^2 R\sin\beta$
+\subsection*{Lifting flow with CW vortex}
+Equivalent to angle of attack flow.\\
+$\theta_\text{stag}=\alpha-\beta=\alpha-\sin^{-1}\frac{\Gamma}{4\pi V_\infty R}$\\
+$\Gamma = 4\pi V_\infty R\sin(\alpha-\theta_\text{stag})$\\
+$L'=4\pi\rho V_\infty^2 R\sin(\alpha-\theta_\text{stag})$
+\subsection*{Kutta-Joukowski theorem}
+$L'=\rho V_\infty \Gamma$
